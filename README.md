@@ -1,6 +1,6 @@
 # iPS Proteomics
 
-a code repository to reproduce Fig. 2B
+A code repository to reproduce [Fig. 2B](https://raw.githubusercontent.com/akikuno/iPS-proteomics/main/reports/dotplot_log2fc.png).
 
 ## Requirements
 
