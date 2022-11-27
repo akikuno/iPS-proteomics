@@ -1,6 +1,6 @@
 if (!require("pacman", quietly = TRUE)) {
-      install.packages("pacman")
-  }
+    install.packages("pacman")
+}
 pacman::p_load(tidyverse, fs, readxl, ggrepel)
 dir_create(c("data", "reports"))
 
@@ -40,9 +40,14 @@ g_dot <-
     geom_violin(aes(color = "gray75")) +
     geom_jitter(aes(color = color), position = pos) +
     geom_label_repel(
+        size = 6,
         position = pos,
         min.segment.length = 0,
-        fill = "white", show.legend = FALSE
+        max.overlaps = Inf,
+        box.padding = 1,
+        fill = "white",
+        segment.size = 1,
+        show.legend = FALSE
     ) +
     scale_colour_identity() +
     labs(x = NULL, y = "log2-FC") +
@@ -54,6 +59,7 @@ g_dot <-
     )
 
 ggsave("reports/dotplot_log2fc.png", g_dot, dpi = 600)
+ggsave("reports/dotplot_log2fc.pdf", g_dot)
 
 df_plot %>%
     mutate(threshold = if_else(log2FC > threshold, TRUE, FALSE)) %>%

@@ -10,10 +10,11 @@ A code repository to reproduce [Fig. 2B](https://raw.githubusercontent.com/akiku
 ## Execute
 
 ```r
-Rscript --vanilla --slave scripts/script.R
+Rscript --vanilla --slave scripts/dotplot.R
 ```
 
 The command produces a `reports` directory, which contains the followings:
 
 - `dotplot_log2fc.png`: Fig. 2B
+- `dotplot_log2fc.pdf`: Fig. 2B
 - `expression_log2fc.csv`: Gene expression data to generate Fig. 2B
